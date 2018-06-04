@@ -19,7 +19,7 @@ import okhttp3.Response;
 
 public class TestOkHttp3 {
     /**
-     * 测试 OkHttp Get 方法
+     * 测试 OkHttp Get 方法；主要分3步
      */
     @Test
     public void testGet() {
