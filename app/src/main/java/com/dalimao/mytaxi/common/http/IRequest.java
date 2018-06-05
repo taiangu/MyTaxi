@@ -23,7 +23,7 @@ public interface IRequest {
     void setHeader(String key, String value);
 
     /**
-     *  指定请求参数
+     *  指定请求体参数
      * @param key
      * @param value
      */

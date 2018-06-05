@@ -13,6 +13,7 @@ public class OkHttpClientImplTest {
     IHttpClient httpClient;
     @Before
     public void setUp() throws Exception {
+        // 用到 OkHttpClientImpl 生成的 IHttpClient
         httpClient = new OkHttpClientImpl();
         API.Config.setDebug(true);
     }
@@ -20,7 +21,7 @@ public class OkHttpClientImplTest {
     @Test
     public void get() throws Exception {
         // 设置 request 参数
-        String url = API.Config.getDomain() + API.TEST_GET;
+        String url = API.Config.getDomain() + API.TEST_GET; // 设置url路径
         IRequest request = new BaseRequest(url);
         request.setHeader("testHeader", "test header");
         request.setBody("uid", "123456");

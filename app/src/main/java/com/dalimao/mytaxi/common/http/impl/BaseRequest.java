@@ -24,6 +24,7 @@ public class BaseRequest implements IRequest{
         this.url = url;
         header = new HashMap();
         body = new HashMap<>();
+        // 设置请求的头部参数
         header.put("Application-Id", "myTaxiID");
         header.put("API-Key", "myTaxiKey");
 
@@ -45,7 +46,7 @@ public class BaseRequest implements IRequest{
     @Override
     public String getUrl() {
         if (GET.equals(method)) {
-            // 组装 Get 请求参数
+            // 组装 Get 请求参数；get请求是url后面带请求参数。
             for (String key : body.keySet()) {
 
                 url = url.replace("${" + key + "}", body.get(key).toString());
