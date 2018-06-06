@@ -24,6 +24,7 @@ public class PhoneInputDialog extends Dialog{
     private Button mButton;
 
     public PhoneInputDialog(Context context) {
+        // 引入自定义的 Dialog 样式
         this(context, R.style.Dialog);
     }
     public PhoneInputDialog(Context context, int theme) {
@@ -36,6 +37,7 @@ public class PhoneInputDialog extends Dialog{
         super.onCreate(savedInstanceState);
         LayoutInflater inflater = (LayoutInflater) getContext()
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        // 引入自定义的 Dialog 布局
         mRoot  = inflater.inflate(R.layout.dialog_phone_input, null);
         setContentView(mRoot);
         initListener();

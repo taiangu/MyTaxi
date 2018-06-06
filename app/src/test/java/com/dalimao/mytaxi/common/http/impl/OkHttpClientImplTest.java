@@ -13,6 +13,7 @@ public class OkHttpClientImplTest {
     IHttpClient httpClient;
     @Before
     public void setUp() throws Exception {
+        // 执行之前要初始化 IHttpClient 对象
         httpClient = new OkHttpClientImpl();
         API.Config.setDebug(true);
     }

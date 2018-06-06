@@ -23,7 +23,7 @@ import com.google.gson.Gson;
 
 
 /**
- *  1 检查本地纪录(登录态检查)
+ *  1 检查本地记录(登录态检查)
  *  2 若用户没登录则登录
  *  3 登录之前先校验手机号码
  *  4 token 有效使用 token 自动登录
@@ -70,9 +70,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-
+        // 检查token已经过期了
         if (!tokenValid) {
-            showPhoneInputDialog();
+            showPhoneInputDialog(); // 检查token已经过期了，显示对话框
         } else {
             // 请求网络，完成自动登录
             new Thread() {
