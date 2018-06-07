@@ -47,7 +47,7 @@ public class TestRxJava {
                     }
                 };
 
-        //被观察者
+        // 被观察者（数据源）
         Observable observable = Observable.create(
                 new Observable.OnSubscribe<Subscriber>() {
                     @Override
@@ -55,13 +55,14 @@ public class TestRxJava {
                         // 发生事件
                         System.out.println("call in tread:" + Thread.currentThread().getName());
                         subscriber1.onStart();
-                        subscriber1.onError(new Exception("error"));
+//                        subscriber1.onError(new Exception("error"));
                         subscriber1.onNext("hello world");
                         subscriber1.onCompleted();
                     }
                 });
 
-        //订阅
+        // 订阅  ，订阅被触发后，被观察者的call方法才会被触发。
+        // 订阅一般发生到子线程里面。
         observable.subscribe(subscriber);
 
     }

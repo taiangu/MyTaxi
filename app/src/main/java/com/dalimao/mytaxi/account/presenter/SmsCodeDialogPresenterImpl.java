@@ -55,9 +55,13 @@ public class SmsCodeDialogPresenterImpl implements ISmsCodeDialogPresenter {
             }
         }
     }
+    // 这是Presenter层（运行在UI主线程） 她说 View层 与 Model层 之间的桥梁。
     public SmsCodeDialogPresenterImpl(ISmsCodeDialogView view,
                                       IAccountManager accountManager) {
+        // 这是View层（运行在UI主线程）
         this.view = view;
+
+        // 这是Model层（运行在子线程），用Handler来出来子线程发出的消息。
         this.accountManager = accountManager;
         accountManager.setHandler(new MyHandler(this));
     }
